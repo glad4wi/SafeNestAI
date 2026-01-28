@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    /* =========================
+     DARK MODE (DEFAULT)
+     ========================= */
+    --bg-color: #0B0B0B;
+    --bg-secondary: #121212;
+    --bg-tertiary: #1a1a1a;
+
+    --primary-blue: #0A1AFF;
+    --primary-blue-glow: rgba(10, 26, 255, 0.6);
+
+    --neon-cyan: #00F0FF;
+    --neon-yellow: #FAFF00;
+    --gold-accent: #FFD700;
+
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --text-muted: #666666;
+
+    --border-color: #333333;
+
+    /* Status Colors */
+    --success-green: #00FF88;
+    --success-glow: rgba(0, 255, 136, 0.3);
+    --warning-orange: #FF9500;
+    --warning-glow: rgba(255, 149, 0, 0.3);
+    --danger-red: #FF3B5C;
+    --danger-glow: rgba(255, 59, 92, 0.3);
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+    --gradient-blue: linear-gradient(180deg, rgba(10, 26, 255, 0) 0%, rgba(10, 26, 255, 0.1) 100%);
+    --gradient-cyan: linear-gradient(135deg, #00F0FF 0%, #0080FF 100%);
+
+    /* Glass Effects */
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --glass-bg-light: rgba(30, 30, 30, 0.8);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-border-hover: 1px solid rgba(255, 255, 255, 0.2);
+
+    /* Fonts */
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+
+    /* Spacing & Radius */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+}
+
+/* =========================
+   LIGHT MODE
+   ========================= */
+:root[data-theme="light"] {
+    --bg-color: #F1F5F9;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #E2E8F0;
+
+    --primary-blue: #2563EB;
+    --primary-blue-glow: rgba(37, 99, 235, 0.3);
+
+    --neon-cyan: #0284C7;
+    --neon-yellow: #D97706;
+    --gold-accent: #B45309;
+
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+
+    --border-color: #CBD5E1;
+
+    /* Status Colors */
+    --success-green: #059669;
+    --success-glow: rgba(5, 150, 105, 0.2);
+    --warning-orange: #EA580C;
+    --warning-glow: rgba(234, 88, 12, 0.2);
+    --danger-red: #DC2626;
+    --danger-glow: rgba(220, 38, 38, 0.2);
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg-light: rgba(255, 255, 255, 0.9);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.1);
+    --glass-border-hover: 1px solid rgba(0, 0, 0, 0.2);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Base Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    transition: background-color var(--transition-base), color var(--transition-base);
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.neon-text {
+    color: var(--text-primary);
+    text-shadow: 0 0 20px var(--primary-blue-glow);
+}
+
+:root[data-theme="light"] .neon-text {
+    text-shadow: none;
+    /* Cleaner look for light mode */
+    color: var(--primary-blue);
+}
+
+/* Utility Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(0.95);
+    }
+}
+
+/* Button & Inputs Overrides */
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}

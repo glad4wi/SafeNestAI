@@ -1,0 +1,149 @@
+.scan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    min-height: 80vh;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Center horizontally */
+}
+
+.scan-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: var(--spacing-sm);
+}
+
+.header-mascot {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-top: var(--spacing-md);
+    filter: drop-shadow(0 0 10px var(--primary-blue-glow));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.scan-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.scan-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.4);
+    /* Slightly lighter than default glass */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.scan-card:hover {
+    border-color: var(--text-secondary);
+}
+
+.quick-scan:hover {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 30px rgba(250, 255, 0, 0.1);
+}
+
+.deep-scan:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+}
+
+.icon-wrapper {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.quick-icon {
+    color: var(--neon-yellow);
+}
+
+.deep-icon {
+    color: var(--neon-cyan);
+}
+
+.scan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.scan-card p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.cta-fake-button {
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.quick-scan:hover .cta-fake-button {
+    background: var(--neon-yellow);
+    color: black;
+}
+
+.deep-scan:hover .cta-fake-button {
+    background: var(--neon-cyan);
+    color: black;
+}

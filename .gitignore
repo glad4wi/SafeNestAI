@@ -1,0 +1,49 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Environment Variables (CRITICAL)
+.env
+.env.local
+.env.*.local
+backend/.env
+backend/.env.local
+
+# Python / Backend
+backend/__pycache__/
+backend/*.py[cod]
+backend/venv/
+backend/.venv/
+backend/env/
+backend/test_env/
+backend/.pytest_cache/
+backend/coverage/
+backend/htmlcov/
+backend/evidence/
+backend/models/
+backend/scan_history.json
+*.spec
+dist/
+build/
+*.egg-info/
+
+# Node / Frontend
+app/node_modules/
+app/dist/
+app/build/
+app/.eslintcache
+app/coverage/
+app/npm-debug.log*
+app/yarn-debug.log*
+app/yarn-error.log*
+app/.env
+app/.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

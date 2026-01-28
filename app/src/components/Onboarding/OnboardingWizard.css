@@ -1,0 +1,142 @@
+.wizard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    margin-bottom: var(--spacing-xl);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    transition: width 0.5s ease;
+}
+
+.step-content {
+    width: 100%;
+    max-width: 700px;
+    /* Increased slightly for better grid layout */
+}
+
+.step-card {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: var(--spacing-sm);
+}
+
+.step-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.step-mascot {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px var(--primary-blue-glow));
+}
+
+/* Container for the dynamic form elements */
+.step-content-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Better responsiveness */
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.option-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    min-height: 60px;
+    /* Ensure uniform height perception */
+}
+
+.option-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.option-card.selected {
+    border-color: var(--primary-blue);
+    background: rgba(10, 26, 255, 0.15);
+    box-shadow: 0 0 15px rgba(10, 26, 255, 0.2), inset 0 0 10px rgba(10, 26, 255, 0.1);
+}
+
+.option-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-icon {
+    color: var(--neon-cyan);
+    min-width: 24px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+}
+
+/* Neon Input Field */
+.neon-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: var(--font-family);
+}
+
+.neon-input:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.neon-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
